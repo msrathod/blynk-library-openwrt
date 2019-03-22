@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=blynk_client
+PKG_NAME:=blynkClient
 PKG_VERSION:=0.6.2
 PKG_RELEASE:=1
 
@@ -23,7 +23,7 @@ include $(INCLUDE_DIR)/package.mk
 #	$(CP) -r /data2/Projects/blynk-library-arduino/* $(PKG_BUILD_DIR)/
 #endef
 
-define Package/blynk_client
+define Package/blynkClient
   SUBMENU:=Blynk
   SECTION:=net
   CATEGORY:=Network
