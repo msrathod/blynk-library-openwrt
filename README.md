@@ -3,7 +3,7 @@
 Build from source:
 
 ```bash
-echo "src-git blynk git://github.com/msrathod/blynk-library-openwrt.git" >> ./feeds.conf
+echo "src-git blynk_client git://github.com/msrathod/blynk-library-openwrt.git" >> ./feeds.conf
 ./scripts/feeds update -a
 ./scripts/feeds install -p blynk_client -a
 make menuconfig
@@ -42,10 +42,10 @@ make -j 8
 
 ## Build just Blynk:
 ```
-make package/blynk/compile V=s
-``
+make package/blynk_client/compile V=s
+```
 
 For a rebuild:
 ```
-make package/blynk/{clean,compile,install} V=s
+make package/blynk_client/{clean,compile,install} V=s
 ```
