@@ -3,56 +3,14 @@
 Build from source:
 
 ```bash
-echo "src-git blynk git://github.com/vshymanskyy/blynk-library-openwrt.git" >> ./feeds.conf
+echo "src-git blynk git://github.com/msrathod/blynk-library-openwrt.git" >> ./feeds.conf
 ./scripts/feeds update -a
-./scripts/feeds install -p blynk -a
+./scripts/feeds install -p blynk_client -a
 make menuconfig
 ```
-
-### Node.js client
-You need [nxhack openwrt-node](https://github.com/nxhack/openwrt-node-packages) for this.
-
-Select in menuconfig: ```Languages -> Node.js -> node-blynk-library```
-
-**Node.js** example:
-```js
-const Blynk = require('blynk-library');
-
-// Initialize Blynk
-let AUTH = 'YourAuthToken';
-let blynk = new Blynk.Blynk(AUTH);
-let v1 = new blynk.VirtualPin(1);
-
-// Register virtual pin handler
-v1.on('write', function(param) {
-    console.log('Got a value:', param);
-});
-```
-
-### Python 2.7 client
-
-Select in menuconfig: ```Languages -> Python -> python-blynk-library```
-
-**Python** example:
-```python
-import BlynkLib
-
-# Initialize Blynk
-AUTH = 'YourAuthToken'
-blynk = BlynkLib.Blynk(AUTH)
-
-# Register virtual pin handler
-@blynk.VIRTUAL_WRITE(1)
-def v1_write_handler(value):
-    print('Got a value: {}'.format(value))
-
-# Start Blynk (this call should never return)
-blynk.run()
-```
-
 ### C++ client
 
-Select in menuconfig: ```Network -> Blynk -> blynk```
+Select in menuconfig: ```Network -> Blynk -> blynk_client```
 
 **C++** example:
 ```cpp
@@ -79,15 +37,13 @@ int main(int argc, char* argv[]) {
 
 ## Build OpenWRT image:
 ```bash
-make -j 5
+make -j 8
 ```
 
 ## Build just Blynk:
 ```
 make package/blynk/compile V=s
-make package/node-blynk-library/compile V=s
-make package/python-blynk-library/compile V=s
-```
+``
 
 For a rebuild:
 ```
