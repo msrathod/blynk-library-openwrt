@@ -32,7 +32,7 @@ define Package/blynkClient
   DEPENDS:=+libpthread +librt $(CXX_DEPENDS)
 endef
 
-define Package/blynk/description
+define Package/blynkClient/description
  Blynk is a platform with iOS and Android apps to control Arduino,
  Raspberry Pi, Onion Omega and the likes over the Internet.
  You can easily build graphic interfaces for all your projects
