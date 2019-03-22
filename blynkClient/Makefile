@@ -43,9 +43,9 @@ MAKE_PATH:=linux
 
 MAKE_FLAGS += LD="$(TARGET_CXX)"
 
-define Package/blynk/install
+define Package/blynkClient/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/linux/blynk $(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/linux/blynkClient $(1)/usr/bin/
 endef
 
-$(eval $(call BuildPackage,blynk))
+$(eval $(call BuildPackage,blynkClient))
