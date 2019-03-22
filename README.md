@@ -3,14 +3,14 @@
 Build from source:
 
 ```bash
-echo "src-git blynk_client git://github.com/msrathod/blynk-library-openwrt.git" >> ./feeds.conf
+echo "src-git blynkClient git://github.com/msrathod/blynk-library-openwrt.git" >> ./feeds.conf
 ./scripts/feeds update -a
-./scripts/feeds install -p blynk_client -a
+./scripts/feeds install -p blynkClient -a
 make menuconfig
 ```
 ### C++ client
 
-Select in menuconfig: ```Network -> Blynk -> blynk_client```
+Select in menuconfig: ```Network -> Blynk -> blynkClient```
 
 **C++** example:
 ```cpp
@@ -42,10 +42,10 @@ make -j 8
 
 ## Build just Blynk:
 ```
-make package/blynk_client/compile V=s
+make package/blynkClient/compile V=s
 ```
 
 For a rebuild:
 ```
-make package/blynk_client/{clean,compile,install} V=s
+make package/blynkClient/{clean,compile,install} V=s
 ```
